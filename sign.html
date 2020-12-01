@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alpro</title>
+    <link rel="stylesheet" href="slide_show.css">
+    <link rel="shortcut icon"  href="images/favicon.png" sizes="96x96">
+
+    
+     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/form.css">
+    
+    
+</head>
+        <div class="bini"> <a href="index.html"><img src="images/logo.png" class="logo"></a></div>
+   
+
+<body id="loginLanding">
+   <main class="wrapper">
+		
+			<header>
+                <div class="logo">
+                <img src="logo/logo_size.jpg"  alt="Logo">
+                </div>
+				<h1>Sign Up to Aplro</h1>
+			</header>
+			<article id="loginForm">
+				<form action="index.html" method="post" name="form1" id="form1" onSubmit="return validateForm();">
+                    
+                    <label for="name">Name:</label>
+					  <input name="name" type="text"  id="name" placeholder="Example: Odeh vincent">
+                        
+					 <label for="country">Country:</label>
+					<input name="country" id="country" placeholder="Example: 2 Henery Street" required >
+                    
+                    <label for="mobile">Mobile:</label>
+					  <input name="mobile"  id="mobile" placeholder="Example: 08992132422">
+                    
+                    <label for="email1">Email:</label>
+					  <input name="email1"  id="email1" placeholder="Example: vincent@gmail.com">
+                    
+                    <label for="email2">Retype your Email:</label>
+					  <input name="email2"  id="email2">
+
+					<label for="password"><i class="fas fa-lock"></i> Password</label>
+					<div id="pwdWrap">
+						<input type="password" id="password" name="password" required>
+						<i class="fas fa-eye eyeIcon"></i>
+					</div>
+
+					<div>
+						<button type="submit" id="submit">Register <i class="fas fa-angle-right"></i></button>
+                        
+                         <a href="index.html">
+                             <img src="images/button_cancel.png" id="center" alt="cancel"></a> 
+					</div>
+                    
+                  
+ 
+
+          
+          
+           
+
+				
+				</form>
+			</article>
+       
+    </main>
+   
+    <script>
+
+        
+        
+		function validateEmail(elementValue){
+			var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/; 
+			return emailPattern.test(elementValue);
+		}
+		function isNumeric(numericValue){
+			var numberPattern=/^[0-9]+$/;
+			return numberPattern.test(numericValue);
+		}
+		function validateName(nameValue){
+			var namePattern=/^[a-zA-Z ""]+$/;
+			return namePattern.test(nameValue);
+		}
+		function validatePhone(phoneNumber){
+			var phonePattern=/^(087|086|085|089)+[0-9]{7}$/;
+			return phonePattern.test(phoneNumber);
+		}
+		function validateForm(){
+			
+			var nameVal=document.getElementById("name").value;
+			if(nameVal==null || nameVal=="")
+				{
+					alert("Name must be filled out");
+					return false;
+				}
+			if(!validateName(nameVal))
+				{
+					alert("Name should contain only letters");
+					return false;
+				}
+			
+
+			var emailVal=document.getElementById("email1").value;
+			var email2Val=document.getElementById("email2").value;
+			if(emailVal==null || emailVal=="")
+				{
+					alert("Enter your Email address");
+					return false;
+				}
+			
+			if(!validateEmail(emailVal))
+				{
+					alert("Enter a Valid Email address ");
+					return false;
+				}
+			 if(emailVal!=email2Val)
+				{
+					alert("Email Address Does Not Match");
+					return false;
+				}
+			var phoneNumber=document.getElementById("mobile").value;
+			if(phoneNumber==null || phoneNumber=="")
+				{
+					alert("Enter a Mobile number");
+					return false;
+				}
+			if(!validatePhone(phoneNumber))
+				{
+					alert("Enter a Valid Irish Mobile Number");
+					return false;
+				}
+			
+			
+		}
+        
+        
+        
+        
+        const visToggle = document.querySelector('.eyeIcon');
+
+        const input = document.querySelector('#pwdWrap input');
+        
+        var password = true;
+        
+       visToggle.addEventListener('click', function(){
+                 if(password) {
+                     input.setAttribute('type','text'); // using js dynamically changed the type attribute
+                     visToggle.classList.remove('fa-eye');
+                     visToggle.classList.add('fa-eye-slash');
+                 } else {
+                     input.setAttribute('type','password');
+                     visToggle.classList.remove('fa-eye-slash');
+                     visToggle.classList.add('fa-eye');
+                 }
+            password = !password;
+              });
+        
+        
+// Define a function to display the current time
+function displayTime() {
+    let clock = document.querySelector("#clock"); // Get element with id="clock"
+    let now = new Date();                         // Get current time
+    clock.textContent = now.toLocaleTimeString(); // Display time in the clock
+}
+displayTime()                    // Display the time right away
+setInterval(displayTime, 1000);  // And then update it every second. 
+       </script>
+
+    
+        <script src="slide_show.js"></script> 
+
+</body>
+</html>
+ 

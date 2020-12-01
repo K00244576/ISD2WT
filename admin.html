@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Alpro</title>
+    <link rel="stylesheet" href="slide_show.css">
+    <link rel="shortcut icon"  href="images/favicon.png" sizes="96x96">
+
+</head>
+<body>
+    <div class="mobile">
+        <div class="bini"> <a href="index.html"><img src="images/logo.png" class="logo"></a></div>
+    <header>
+       
+        
+        <ul>
+        <li><a href="index.html">Home</a></li>
+         <li><a href="product.html">Menu</a></li>
+         <li><a href="admin.html">What's New</a></li>
+         <li><a href="sign.html">Sign Up</a></li>
+        <li><a href="login.html">Account</a></li>
+         <li><a href="bms.html">BMS</a></li>
+              <label for="searchfield">
+                    <input type="search" name="searchfield" id="searchfield" placeholder="Search...">
+                </label>
+         <span id="clock"></span> <!-- We will insert the time into this element. -->
+
+        
+        </ul>
+        
+        </header>
+        <div class="admin">
+        
+        </div>
+        
+        <div id="sidebar">
+        
+        </div>
+        
+        <div id="data">
+        
+        </div>
+
+     <div class="site">
+        <h3 class="dark">Site Map </h3>
+				
+					<p><a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a> </p>
+        
+					<p><a href="product.html"><i class="fa fa-fw fa-user"></i> Menu</a></p>
+        
+					<p><a href="sign.html"><i class="fa fa-fw fa-envelope"></i> Sign Up</a> </p>
+        
+					<p> <a href="login.html">Account</a></p>
+    
+
+					<p><a href="bms.html">Calculate your BMI</a></p>
+
+					
+				
+			</div>
+              
+    <div class="copyright">
+		  	<h3 class="dark">Copyright</h3>
+			  <p>Odeh Vincent Osayande</p>
+			  <p><a href="mailto:k00244576@student.lit.ie">K00244576</a></p>
+			  <p><a href="tel:+353899560513">Call us : 0899425080 </a></p>
+		  </div>
+    </div>
+    <script>
+
+
+// Define a function to display the current time
+function displayTime() {
+    let clock = document.querySelector("#clock"); // Get element with id="clock"
+    let now = new Date();                         // Get current time
+    clock.textContent = now.toLocaleTimeString(); // Display time in the clock
+}
+displayTime()                    // Display the time right away
+setInterval(displayTime, 1000);  // And then update it every second. 
+
+</script>
+        <script src="slide_show.js"></script> 
+</body>
+</html>
+ 
